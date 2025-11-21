@@ -14,7 +14,7 @@ function App() {
     <>
    
       <div style={{ padding: 40 }}>
-      <h1>🛒 Jaivardhan Shopping Center</h1>
+      <h1>🛒 React 19 E-Commerce Example</h1>
       <ProductList />
       <CartIcon />
       {/* <Counter /> */}
