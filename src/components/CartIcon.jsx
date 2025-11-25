@@ -1,23 +1,41 @@
 import { useState } from "react";
 import { useSelector } from "react-redux";
-import { FaShoppingCart } from "react-icons/fa"; // cart icon
+import { FaShoppingCart, FaUser } from "react-icons/fa"; // cart + login icon
 import CartDropdown from "./CartDropdown";
 
 export default function CartIcon() {
-  const items = useSelector(state => state.cart.items);
-  const [open, setOpen] = useState(false);
+  const items = useSelector((state) => state.cart.items);
+  const [openCart, setOpenCart] = useState(false);
 
   const itemCount = items.reduce((acc, item) => acc + item.quantity, 0);
 
   return (
-    <div style={{ position: "fixed", top: 20, right: 20, zIndex: 1000 }}>
-      <div 
-        onClick={() => setOpen(!open)} 
+    <div
+      style={{
+        position: "fixed",
+        top: 20,
+        right: 20,
+        zIndex: 1000,
+        display: "flex",
+        gap: 20,
+        alignItems: "center",
+      }}
+    >
+      {/* Login Icon */}
+      <div>
+        <a href="/login">
+          <FaUser size={30} title="Login" />
+        </a>
+      </div>
+
+      {/* Cart Icon */}
+      <div
+        onClick={() => setOpenCart(!openCart)}
         style={{ cursor: "pointer", position: "relative" }}
       >
         <FaShoppingCart size={30} />
         {itemCount > 0 && (
-          <span 
+          <span
             style={{
               position: "absolute",
               top: -10,
@@ -26,7 +44,7 @@ export default function CartIcon() {
               color: "white",
               borderRadius: "50%",
               padding: "2px 6px",
-              fontSize: 12
+              fontSize: 12,
             }}
           >
             {itemCount}
@@ -34,7 +52,7 @@ export default function CartIcon() {
         )}
       </div>
 
-      {open && <CartDropdown />}
+      {openCart && <CartDropdown />}
     </div>
   );
 }
