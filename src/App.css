@@ -1,3 +1,15 @@
+/* App.css */
+body {
+  margin: 0; /* remove default margin */
+  height: 100vh; /* full viewport height */
+  background-image: url('./assets/background.jpg');
+  background-size: cover; /* cover whole screen */
+  background-position: center;
+  background-repeat: no-repeat;
+  font-family: Arial, sans-serif;
+}
+
+/* 
 #root {
   max-width: 1280px;
   margin: 0 auto;
@@ -39,4 +51,4 @@
 
 .read-the-docs {
   color: #888;
-}
+} */

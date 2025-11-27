@@ -1,10 +1,10 @@
 import { Routes, Route } from "react-router-dom";
 import ProtectedRoute from "../features/auth/ProtectedRoute.jsx";
 import Checkout from "../features/auth/Checkout.jsx";
-import Login from "../features/auth/Login.jsx";
 import Layout from "./Layout.jsx";
-import Cart from "../components/Cart.jsx";
+import Login from "../features/auth/Login.jsx";
 import ProductList from "../features/products/ProductList.jsx";
+import Cart from "../features/cart/Cart.jsx";
 export default function AppRoutes() {
     return (
       <Routes>

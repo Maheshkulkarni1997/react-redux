@@ -7,9 +7,7 @@ import Checkout from './features/auth/Checkout.jsx'
 import ProtectedRoute from './features/auth/ProtectedRoute.jsx.jsx';
 
 function App() {
-  return (
-   
-  );
+  
 }
 
 export default App
