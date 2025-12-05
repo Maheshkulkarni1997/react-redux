@@ -5,26 +5,20 @@ import Layout from "./Layout.jsx";
 import Login from "../features/auth/Login.jsx";
 import ProductList from "../features/products/ProductList.jsx";
 import Cart from "../features/cart/Cart.jsx";
+import ProductsByCategoryPage from "../features/products/ProductsByCategoryPage.jsx";
+
 export default function AppRoutes() {
-    return (
-      <Routes>
-        {/* Parent layout route */}
-        <Route path="/" element={<Layout />}>
-          {/* Child routes */}
-          <Route index element={<ProductList />} />          
-          <Route path="login" element={<Login />} />        {/* /login */}
-          <Route path="cart" element={<Cart />} />          {/* /cart */}
-          <Route
-            path="checkout"
-            element={
-              <ProtectedRoute>
-                <Checkout />
-              </ProtectedRoute>
-            }
-          />
-          {/* Add more modules here */}
-        </Route>
-      </Routes>
-    );
-  }
-  
+  return (
+    <Routes>
+      <Route path="/" element={<Layout />}>
+  <Route index element={<ProductList />} />  {/* Default homepage */}
+  <Route path="products" element={<ProductList />} />
+  <Route path="products-by-category" element={<ProductsByCategoryPage />} />
+  <Route path="login" element={<Login />} />
+  <Route path="cart" element={<Cart />} />
+  <Route path="checkout" element={<ProtectedRoute><Checkout /></ProtectedRoute>} />
+</Route>
+
+    </Routes>
+  );
+}
